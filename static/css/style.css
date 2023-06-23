@@ -1,0 +1,22 @@
+.main-header{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    align-items: center;
+}
+
+.header-logo{
+    color: #1e1e1e;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.header-link{
+    text-decoration: none;
+    color: #1e1e1e;
+    font-size: 20px;
+    font-family: archivo;
+    font-weight: 600;
+}
