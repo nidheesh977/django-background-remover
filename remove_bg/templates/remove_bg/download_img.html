@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h3>Download</h3>
+  {% for image in images %}
+
+  <div>
+    <img src = "{{image.img.url}}" style = "height: 200px; width: 200px; object-fit: contain"/>
+    <img src = "{{image.rmbg_img.url}}" style = "height: 200px; width: 200px; object-fit: contain"/>
+    <a download="custom-filename.jpg" href="{{image.rmbg_img.url}}" title="ImageName">Download</a>
+  </div>
+  {% endfor %} 
+</body>
+</html>
