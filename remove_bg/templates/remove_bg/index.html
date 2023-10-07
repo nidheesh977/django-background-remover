@@ -1,10 +1,26 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
   <section  class = 'container'>
     <form method="post" enctype="multipart/form-data">
       {% csrf_token %}
-      <input type = "file" name = "image" />
+      <label class = "file-input-label" for = "img-input" style = "padding: 30px; background-color: rgb(214, 214, 214)">Click here or drag image files</label>
+      <input type = "file" name = "image" id = "img-input" class = "d-none"/>
+      <br />
       <input type = "submit" />
     </form>
+  </section>
+  <br />
+  <section class = "container mt-5">
+    <div class = "row">
+      <div class = "col-12 col-md-8">
+        <h3 class = "welcone-text fnt-sz-30 fnt-wt-600 mb-1">WELCOME TO <span class = "text-highlight-1">PENCEIL.COM</span></h3>
+        <h1>REMOVE THE BACKGROUND FROM IMAGES FOR FREE.</h1>
+        <p class = ".fnt-sz-20">Snap the background right off your images with Penceil Background Remover. Leave it to AI to masterfully trace the object and remove the background of your image in a matter of seconds.</p>
+      </div>
+      <div class = "col-12 col-md-4" style = "object-fit: contain;">
+        <img src = "{% static 'images/welcome_title.png' %}" style = "height: 100%; width: 100%" />
+      </div>
+    </div>
   </section>
 {% endblock %}

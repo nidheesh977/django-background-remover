@@ -12,11 +12,40 @@
     font-weight: bold;
     font-size: 30px;
 }
-
 .header-link{
     text-decoration: none;
     color: #1e1e1e;
     font-size: 20px;
     font-family: archivo;
     font-weight: 600;
+}
+h1{
+    font-size: 60px;
+}
+h2{
+    font-size: 40px;
+}
+h3{
+    font-size: 30px;
+}
+h4{
+    font-size: 25px;
+}
+h5{
+    font-size: 20px;
+}
+h6{
+    font-size: 16px;
+}
+p{
+    font-size: 16px;
+}
+.fnt-sz-20{
+    font-size: 20px;
+}
+
+.text-highlight-1{
+    background-color: #BDFF01;
+    line-height: 33px;
+    padding: 5px 10px;
 }
