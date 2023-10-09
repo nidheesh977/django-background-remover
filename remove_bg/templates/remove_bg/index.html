@@ -1,26 +1,97 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-  <section  class = 'container'>
-    <form method="post" enctype="multipart/form-data">
-      {% csrf_token %}
-      <label class = "file-input-label" for = "img-input" style = "padding: 30px; background-color: rgb(214, 214, 214)">Click here or drag image files</label>
-      <input type = "file" name = "image" id = "img-input" class = "d-none"/>
-      <br />
-      <input type = "submit" />
-    </form>
-  </section>
   <br />
   <section class = "container mt-5">
     <div class = "row">
-      <div class = "col-12 col-md-8">
-        <h3 class = "welcone-text fnt-sz-30 fnt-wt-600 mb-1">WELCOME TO <span class = "text-highlight-1">PENCEIL.COM</span></h3>
+      <div class = "col-12 col-lg-7">
+        <h3 class = "welcone-text fnt-sz-30 fnt-wt-600 mb-4">WELCOME TO <span class = "text-highlight-1">PENCEIL.COM</span></h3>
         <h1>REMOVE THE BACKGROUND FROM IMAGES FOR FREE.</h1>
-        <p class = ".fnt-sz-20">Snap the background right off your images with Penceil Background Remover. Leave it to AI to masterfully trace the object and remove the background of your image in a matter of seconds.</p>
+        <p class = "fnt-sz-20">Snap the background right off your images with Penceil Background Remover. Leave it to AI to masterfully trace the object and remove the background of your image in a matter of seconds.</p>
+        <p><span class = "text-highlight-2">Free</span><span class = "text-highlight-2">No Credit card required</span></p>
       </div>
-      <div class = "col-12 col-md-4" style = "object-fit: contain;">
-        <img src = "{% static 'images/welcome_title.png' %}" style = "height: 100%; width: 100%" />
+      <div class = "col-12 col-lg-5">
+        <img src = "{% static 'images/welcome_title.png' %}" class = "welcome-img" />
       </div>
+    </div>
+  </section>
+  <section class = "container mt-5 mb-5">
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <label class = "file-input-label cursor-pointer" for = "img-input">Click here or drag image files</label>
+      <input type = "file" name = "image" id = "img-input" class = "d-none"/>
+      <br />  
+      <input type = "submit" />
+    </form>
+    <p class = "text-center"><i class="fa-solid fa-circle-arrow-down"></i>Try with an example</p>
+    <div class = "sample-img-container">
+      <img src = "{% static 'images/rectangle_1.png' %}" class = "sample-img" />
+      <img src = "{% static 'images/rectangle_2.png' %}" class = "sample-img" />
+      <img src = "{% static 'images/rectangle_3.png' %}" class = "sample-img" />
+      <img src = "{% static 'images/rectangle_4.png' %}" class = "sample-img" />
+    </div>
+  </section>
+  <section class = "section-green mb-5">
+    <div class = "container">
+      <h1>DISCOVER THE BEST BACKGROUND REMOVER TOOL FOR EFFORTLESS BACKGROUND REMOVAL ON</h1>
+      <h2 class = "section-green-domain">Penceil.com</h2>
+      <p>Penceil.com offers the ultimate Background Remover Tool, powered by advanced algorithms and AI technology, making background removal a breeze.</p>
+      <p class = "text-center"><i class="fa-solid fa-circle-arrow-up"></i>Drag & drop images above to get started for free</p>
+    </div>
+  </section>
+  <section class="container mb-5">
+    <div class = "row align-items-center mb-5">
+      <div class="col-12 col-md-6">
+        <h3>DISCOVER THE BEST BACKGROUND REMOVER TOOL FOR EFFORTLESS BACKGROUND REMOVAL ON PENCEIL.COM</h3>
+        <p>Bid farewell to time-consuming and tedious background removal techniques. Penceil.com offers the ultimate Background Remover Tool, powered by advanced algorithms and AI technology, making background removal a breeze. Whether you're an amateur photographer, a professional graphic designer, or someone seeking to enhance your images, our tool is perfect for your needs.</p>
+      </div>
+      <div class="col-12 col-md-6">
+        <img src = "{% static 'images/welcome_title.png' %}" class = "welcome-img" style = "max-height: 300px" />
+      </div>
+    </div>
+    <div class = "row align-items-center mb-5">
+      <div class="col-12 col-md-6">
+        <img src = "{% static 'images/welcome_title.png' %}" class = "welcome-img" style = "max-height: 300px" />
+      </div>
+      <div class="col-12 col-md-6">
+        <h3>ACHIEVE PIXEL-PERFECT PRECISION WITH OUR BACKGROUND REMOVER TOOL</h3>
+        <p>Why spend valuable time trying to isolate subjects from images when our Background Remover Tool can do it in a matter of seconds? Our tool is designed to optimize your workflow, allowing you to focus on your creative projects. Say goodbye to mundane tasks and embrace more time for bringing your ideas to life.</p>
+      </div>
+    </div>
+    <div class = "row align-items-center">
+      <div class="col-12 col-md-6">
+        <h3>UNLEASH YOUR CREATIVITY WITH OUR BACKGROUND REMOVER TOOL</h3>
+        <p>At Penceil.com, the possibilities for creativity are limitless. Remove backgrounds from product photos, create stunning composite images, or effortlessly add new backgrounds to your portraits. Whether you're an e-commerce business owner, a social media influencer, or a digital artist, our Background Remover Tool empowers you to express your creativity without boundaries.</p>
+      </div>
+      <div class="col-12 col-md-6">
+        <img src = "{% static 'images/welcome_title.png' %}" class = "welcome-img" style = "max-height: 300px" />
+      </div>
+    </div>
+  </section>
+  <section class = "container mt-5 mb-5 pb-1">
+    <h2 class = "text-center mb-5">FAQ SECTION</h2>
+    <div class = "faq-inner-container">
+      <h4>HOW DOES OUR BACKGROUND REMOVER TOOL WORK?</h4>
+      <p>Our Background Remover Tool utilizes advanced AI algorithms to analyze images and accurately identify the subject. Through intelligent background removal, it ensures precise results, even for complex images.</p>
+    </div>
+    <div class = "faq-inner-container">
+      <h4>CAN I USE THE TOOL ON ANY TYPE OF IMAGE?</h4>
+      <p>Absolutely! Penceil.com's versatile Background Remover Tool seamlessly handles various image types, be it product photos, portraits, or landscape shots. Simply upload your image, and let our tool work its magic.</p>
+    </div>
+    <div class = "faq-inner-container">
+      <h4>DO I NEED TECHNICAL SKILLS TO USE THE BACKGROUND REMOVER TOOL?</h4>
+      <p>Not at all! Our user-friendly and intuitive tool requires no technical skills or prior experience. Simply upload your image, follow a few simple steps, and witness the magic as the background disappears effortlessly.</p>
+    </div>
+    <div class = "faq-inner-container">
+      <h4>IS MY IMAGE DATA SECURE AND CONFIDENTIAL?</h4>
+      <p>Your privacy and data security are paramount at Penceil.com. We prioritize the protection of your image data, ensuring secure processing and prompt deletion from our servers. Rest assured, we strictly adhere to data protection protocols for your peace of mind.</p>
+    </div>
+  </section>
+  <section class = "section-green">
+    <div class = "container">
+      <h1>UNLOCK THE FULL POTENTIAL OF YOUR IMAGES TODAY!</h1>
+      <p>Experience the exceptional capabilities of our Background Remover Tool at Penceil.com. Effortlessly remove backgrounds with precision, enhance your images, and unleash your creativity to take your projects to new heights. Bid farewell to the hassle of manual background removal techniques - let our tool do the heavy lifting for you. Get started now and witness the remarkable difference !</p>
+      <p class = "text-center"><i class="fa-solid fa-circle-arrow-up"></i>Drag & drop images above to get started for free</p>
     </div>
   </section>
 {% endblock %}
