@@ -1,0 +1,100 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block metatitle %}
+{% endblock %}
+
+{% block content %}
+
+<!-- START SIGNUP SECTION -->
+<div class="login_register_wrap section">
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-xl-6 col-md-10">
+              <div class="login_wrap">
+              <div class="padding_eight_all bg-white">
+                      <div class="heading_s1">
+                          <h3>Create an Account</h3>
+                      </div>
+                      <form method="post" id="signupForm">
+                          {% csrf_token %}
+                          <div class="form-group mb-3">
+                              <input type="text" required="" class="form-control" name="first_name" placeholder="Enter Your First Name" minlength="3" {% if values.first_name %}value ="{{values.first_name}}"{% endif %}>
+                              {% if form.first_name.errors %}
+                                  <ul class="errorlist">
+                                      {% for error in form.first_name.errors %}
+                                          <div class = "error-msg">{{error}}</div>
+                                      {% endfor %}
+                                  </ul>
+                              {% endif %}
+                          </div>
+                          <div class="form-group mb-3">
+                              <input type="text" required="" class="form-control" name="last_name" placeholder="Enter Your Last Name" minlength="3" {% if values.last_name %}value ="{{values.last_name}}"{% endif %}>
+                              {% if form.last_name.errors %}
+                                  <ul class="errorlist">
+                                      {% for error in form.last_name.errors %}
+                                          <div class = "error-msg">{{error}}</div>
+                                      {% endfor %}
+                                  </ul>
+                              {% endif %}
+                          </div>
+                          <div class="form-group mb-3">
+                              <input type="tel" required="" class="form-control" name="mobile_number" placeholder="Enter Your Phone" {% if values.mobile_number %}value ="{{values.mobile_number}}"{% endif %}>
+                              {% if form.mobile_number.errors %}
+                                  <ul class="errorlist">
+                                      {% for error in form.mobile_number.errors %}
+                                          <div class = "error-msg">{{error}}</div>
+                                      {% endfor %}
+                                  </ul>
+                              {% endif %}
+                          </div>
+                          <div class="form-group mb-3">
+                              <input type="text" required="" class="form-control" name="email" placeholder="Enter Your Email" {% if values.email %}value ="{{values.email}}"{% endif %}>
+                              {% if form.email.errors %}
+                                  <ul class="errorlist">
+                                      {% for error in form.email.errors %}
+                                          <div class = "error-msg">{{error}}</div>
+                                      {% endfor %}
+                                  </ul>
+                              {% endif %}
+                          </div>
+                          <div class="form-group mb-3">
+                              <input class="form-control" required="" type="password" id = "password" name="password" placeholder="Password" minlength="8">
+                              {% if form.password.errors %}
+                                  <ul class="errorlist">
+                                      {% for error in form.password.errors %}
+                                          <div class = "error-msg">{{error}}</div>
+                                      {% endfor %}
+                                  </ul>
+                              {% endif %}
+                          </div>
+                          <div class="form-group mb-3">
+                              <input class="form-control" required="" type="password" id = "confirm_password" name="confirm_password" placeholder="Confirm Password">
+                              <div class = "error-msg" id = "password_match_error" style = 'display: none'>Password doesn't match</div>
+                          </div>
+                          <div class="form-note text-center mb-3">By regestering you are agreed to <a href="terms-conditions.html" target="_blank">Terms and Conditions.</a></div>
+                          <div class="form-group mb-3">
+                              <button type="submit" class="btn btn-fill-out btn-block" name="register">Register</button>
+                          </div>
+                      </form>
+                      <div class="form-note text-center">Already have an account? <a href="{% url 'account:login' %}">Log in</a></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <script>
+    document.getElementById('signupForm').addEventListener('submit', function(e) {
+      let password = document.getElementById("password").value
+      let confirm_password = document.getElementById("confirm_password").value
+      if (password !== confirm_password){
+        e.preventDefault();
+        document.getElementById("password_match_error").style.display = "block"
+      }else{
+        document.getElementById("password_match_error").style.display = "none"
+      }
+    })
+  </script>
+</div>
+<!-- END LOGIN SECTION -->
+
+{% endblock %}
